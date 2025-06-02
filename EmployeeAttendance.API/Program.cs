@@ -80,11 +80,37 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 
-// إضافة endpoint للتحقق من صحة الخادم
-app.MapGet("/api/health", () => new { Status = "OK", Timestamp = DateTime.Now });
+// إضافة endpoints للتحقق من صحة الخادم
+app.MapGet("/", () => "🎉 مرحباً بك في نظام حضور الموظفين!");
+app.MapGet("/api/health", () => new {
+    Status = "OK",
+    Timestamp = DateTime.Now,
+    Message = "الخادم يعمل بشكل طبيعي",
+    Version = "1.0.0"
+});
+
+// إضافة endpoint لاختبار قاعدة البيانات
+app.MapGet("/api/test/employees", async () => {
+    var mockDb = new MockDatabaseService();
+    var employees = await mockDb.GetAllEmployeesAsync();
+    return new {
+        Success = true,
+        Count = employees.Count,
+        Employees = employees.Take(3).Select(e => new { e.Name, e.EmployeeNumber })
+    };
+});
 
 // تشغيل اختبارات سريعة
 Console.WriteLine("🚀 بدء تشغيل خادم نظام حضور الموظفين");
-await TestApp.RunTests();
+Console.WriteLine($"🌐 البيئة: {app.Environment.EnvironmentName}");
+Console.WriteLine($"📍 المنفذ: {Environment.GetEnvironmentVariable("PORT") ?? "5000"}");
 
-app.Run();
+// تشغيل الاختبارات فقط في بيئة التطوير
+if (app.Environment.IsDevelopment())
+{
+    await TestApp.RunTests();
+}
+
+// تحديد المنفذ للاستضافة السحابية
+var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
+app.Run($"http://0.0.0.0:{port}");
