@@ -1,0 +1,105 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <RootNamespace>AlMohasebAlAraby.Desktop</RootNamespace>
+    <AssemblyName>AlMohasebAlAraby.Desktop</AssemblyName>
+    <ApplicationIcon>Resources\app-icon.ico</ApplicationIcon>
+    <StartupObject>AlMohasebAlAraby.Desktop.App</StartupObject>
+    <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
+    <UseWindowsForms>false</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <AssemblyTitle>المحاسب العربي - الإصدار المصري</AssemblyTitle>
+    <AssemblyDescription>نظام محاسبة شامل باللغة العربية للسوق المصري</AssemblyDescription>
+    <AssemblyCompany>Al-Mohaseb Al-Araby</AssemblyCompany>
+    <AssemblyProduct>Al-Mohaseb Al-Araby - Egyptian Edition</AssemblyProduct>
+    <AssemblyCopyright>Copyright © 2024 Al-Mohaseb Al-Araby</AssemblyCopyright>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
+    <PackageReference Include="MaterialDesignColors" Version="2.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0" />
+    <PackageReference Include="System.Data.SQLite" Version="1.0.118" />
+    <PackageReference Include="iTextSharp" Version="5.5.13.3" />
+    <PackageReference Include="EPPlus" Version="7.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
+    <PackageReference Include="Serilog" Version="3.1.1" />
+    <PackageReference Include="Serilog.Extensions.Logging" Version="8.0.0" />
+    <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AlMohasebAlAraby.Shared\AlMohasebAlAraby.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\**\*" />
+    <Resource Include="Fonts\**\*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\**\*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\Accounting\" />
+    <Folder Include="Views\Inventory\" />
+    <Folder Include="Views\Sales\" />
+    <Folder Include="Views\Purchase\" />
+    <Folder Include="Views\Customers\" />
+    <Folder Include="Views\Suppliers\" />
+    <Folder Include="Views\Installments\" />
+    <Folder Include="Views\Pharmacy\" />
+    <Folder Include="Views\HR\" />
+    <Folder Include="Views\Reports\" />
+    <Folder Include="Views\Settings\" />
+    <Folder Include="ViewModels\Accounting\" />
+    <Folder Include="ViewModels\Inventory\" />
+    <Folder Include="ViewModels\Sales\" />
+    <Folder Include="ViewModels\Purchase\" />
+    <Folder Include="ViewModels\Customers\" />
+    <Folder Include="ViewModels\Suppliers\" />
+    <Folder Include="ViewModels\Installments\" />
+    <Folder Include="ViewModels\Pharmacy\" />
+    <Folder Include="ViewModels\HR\" />
+    <Folder Include="ViewModels\Reports\" />
+    <Folder Include="ViewModels\Settings\" />
+    <Folder Include="Services\Accounting\" />
+    <Folder Include="Services\Inventory\" />
+    <Folder Include="Services\Sales\" />
+    <Folder Include="Services\Purchase\" />
+    <Folder Include="Services\Installments\" />
+    <Folder Include="Services\Pharmacy\" />
+    <Folder Include="Services\HR\" />
+    <Folder Include="Services\Reports\" />
+    <Folder Include="Resources\Images\" />
+    <Folder Include="Resources\Icons\" />
+    <Folder Include="Fonts\" />
+    <Folder Include="Data\Database\" />
+    <Folder Include="Data\Templates\" />
+    <Folder Include="Data\Exports\" />
+    <Folder Include="Data\Backups\" />
+  </ItemGroup>
+
+</Project>
