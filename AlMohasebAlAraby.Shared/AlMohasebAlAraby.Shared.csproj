@@ -1,0 +1,53 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>AlMohasebAlAraby.Shared</RootNamespace>
+    <AssemblyName>AlMohasebAlAraby.Shared</AssemblyName>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <AssemblyTitle>المحاسب العربي - المكتبة المشتركة</AssemblyTitle>
+    <AssemblyDescription>مكتبة مشتركة لنظام المحاسب العربي</AssemblyDescription>
+    <AssemblyCompany>Al-Mohaseb Al-Araby</AssemblyCompany>
+    <AssemblyProduct>Al-Mohaseb Al-Araby - Shared Library</AssemblyProduct>
+    <AssemblyCopyright>Copyright © 2024 Al-Mohaseb Al-Araby</AssemblyCopyright>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.0" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.Text.Json" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0" />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\Accounting\" />
+    <Folder Include="Models\Inventory\" />
+    <Folder Include="Models\Sales\" />
+    <Folder Include="Models\Purchase\" />
+    <Folder Include="Models\Customers\" />
+    <Folder Include="Models\Suppliers\" />
+    <Folder Include="Models\Installments\" />
+    <Folder Include="Models\Pharmacy\" />
+    <Folder Include="Models\HR\" />
+    <Folder Include="Models\Reports\" />
+    <Folder Include="Models\Settings\" />
+    <Folder Include="Services\Interfaces\" />
+    <Folder Include="Services\Implementations\" />
+    <Folder Include="Data\" />
+    <Folder Include="Enums\" />
+    <Folder Include="Constants\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="Extensions\" />
+  </ItemGroup>
+
+</Project>
